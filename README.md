@@ -6,4 +6,4 @@
 <br>
 
 
-:black_circle: > _Projeto iniciado no bootcamp da Eduzz na plataforma [DIO](www.dio.me)._
+:black_circle: > _Projeto iniciado no bootcamp da Eduzz na plataforma [DIO](https://www.dio.me)._
