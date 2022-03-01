@@ -1,0 +1,319 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/**********************************/
+/* 0. Variáveis
+/* 1. Tags
+/* 2. Body
+/* 3. Game
+/*   3.1 Pads
+/*   3.2 Center
+/*      3.2.1 GUI
+/* 4. Footer
+/**********************************/
+
+/**********************************/
+/* Color Guide:
+/* 
+/* #00A74A : normal-green
+/* #9F0F17 : normal-red
+/* #CCA707 : normal-yellow
+/* #094A8F : normal-blue
+/* #13ff7c : light-green
+/* #ff4c4c : light-red
+/* #fed93f : light-yellow
+/* #1c8cff : light-blue
+/* #333333 : gray
+/* #ECE7EE : center
+/* #32050C : counter-color
+/*
+/**********************************/
+
+/**********************************/
+/* 0. Variáveis
+/**********************************/
+
+:root {
+	--clr-normal-green:   #00A74A;
+	--clr-normal-red:     #9F0F17;
+	--clr-normal-yellow:  #CCA707;
+	--clr-normal-blue:    #094A8F;
+	
+	--clr-light-green:    #13ff7c;
+	--clr-light-red:      #ff4c4c;
+	--clr-light-yellow:   #fed93f;
+	--clr-light-blue:     #1c8cff;
+	
+	--clr-border:		  #333333;
+	--clr-center:  		  #ECE7EE;
+
+	--clr-counter-bg:	  #32050C;
+	--clr-counter-off:	  #430710;
+	--clr-counter-on:	  #DC0D29;
+
+	--clr-led-off:	 	  #32050C;
+	
+	--clr-switch: 	      #3193DE;
+
+	--game-size: 48rem;
+	--game-border: 1.5rem solid var(--clr-border);
+}
+
+/**********************************/
+/* 1. Tags
+/**********************************/
+
+html{
+	font-size: 62.5%; /*** Facilita utilizar rem como medida, podendo dividir o número desejado de px por 10 para obter o valor em rem ***/
+}
+
+body {
+	background-image: url('https://i.pinimg.com/originals/bd/af/76/bdaf7600ad567b8251d9951c5e397420.jpg');
+		font-family: "Bungee", verdana, sans-serif;
+}
+
+@media (max-width: 600px) {
+	html {
+		font-size: 45%;
+	}
+}
+
+/**********************************/
+/* 2. Body
+/**********************************/
+
+.container {
+	width: var(--game-size);
+	margin-left: auto;
+	margin-right: auto; 
+}
+
+/**********************************/
+/* 3. Game
+/**********************************/
+
+.game {
+	width: var(--game-size);
+	height: var(--game-size);
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 10rem;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+}
+
+.game__title {
+	font-size: 3rem;
+	text-transform: uppercase;
+	margin: 0;
+	margin-top: 3rem;
+	text-align: center;
+}
+
+.reg {
+	font-family: Verdana, sans-serif;
+	font-size: 1.8rem;
+	vertical-align: top;
+}
+
+/**********************************/
+/* 3.1 Pads
+/**********************************/
+
+.game__pad {
+	width: calc(var(--game-size) / 2);
+	height: calc(var(--game-size) / 2);
+	border: var(--game-border);
+}
+
+.game__pad--tl{
+	background-color: var(--clr-normal-green);
+	border-top-left-radius: 100%;
+}
+.game__pad--tr {
+	background-color: var(--clr-normal-red);
+	border-top-right-radius: 100%;
+}
+.game__pad--bl {
+	background-color: var(--clr-normal-yellow);
+	border-bottom-left-radius: 100%;
+}
+.game__pad--br {
+	background-color: var(--clr-normal-blue);
+	border-bottom-right-radius: 100%;
+}
+
+.game__pad--tl.game__pad--active {
+	background-color: var(--clr-light-green);
+}
+
+.game__pad--tr.game__pad--active {
+	background-color: var(--clr-light-red);
+}
+
+.game__pad--bl.game__pad--active {
+	background-color: var(--clr-light-yellow);
+}
+
+.game__pad--br.game__pad--active {
+	background-color: var(--clr-light-blue);
+}
+
+.game__tag--btn {
+	cursor: pointer;
+}
+
+/**********************************/
+/* 3.2 Center
+/**********************************/
+
+.game__options {
+	position: absolute;
+	background-color: var(--clr-center);
+
+	width: calc(var(--game-size) / 2);
+	height: calc(var(--game-size) / 2);	
+
+	border: var(--game-border);
+	border-radius: 25rem;
+
+
+}
+
+/**********************************/
+/* 3.2.1 GUI
+/**********************************/
+
+.gui {
+	padding-left: 1.5rem;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+}
+
+.group {
+	margin-right: 2.2rem;
+	
+}
+
+.group-large {
+	display: flex;
+	width: 10rem;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1rem;
+}
+
+.gui__label {
+	font-family: "Arima Madurai", cursive;
+	font-weight: bold;
+	font-size: 1rem;
+	text-align: center;
+	text-transform: uppercase;
+	
+}
+
+.gui__label--switch {
+	margin: 0;
+	padding-top: 0.75rem;
+}
+
+.gui__btn {
+	width: 2.5rem;
+	height: 2.5rem;
+	margin-left: .2rem;
+	margin-bottom: 2rem;	
+	border-radius: 5rem;
+	box-shadow: 0 .2rem .3rem #222 ;
+	border: .4rem solid #444;
+	cursor: pointer;
+}
+
+.gui__btn:active {
+	transform: translate(0, .3rem);
+	box-shadow: none;
+}
+
+.gui__btn--start {
+	background-color: red;	
+}
+
+.gui__btn--strict {
+	background-color: yellow;
+}
+
+.gui__btn-switch {
+	background-color: #222;
+	margin-left: .5rem;
+	margin-right: .5rem;
+	width: 5rem;
+	height: 2.3rem;
+	border-radius: .3rem;
+	cursor: pointer;
+}
+
+.gui__btn-switch::before {
+	content: "";
+	background-color: var(--clr-switch);
+	display: block;
+	position: relative;
+	left: 2.5rem;
+	width: 2.2rem;
+	height: 1.9rem;
+	border-radius: .2rem;
+	border: .2rem solid #333;
+}
+
+.gui__btn-switch--on::before {
+	left: 0;	
+}
+
+.gui__counter {
+	background-color: var(--clr-counter-bg);
+	color: var(--clr-counter-off);
+	font-family: "Iceland", cursive;
+	font-weight: bold;
+	font-size: 3rem;
+	text-align: right;
+	width: 5.5rem;
+	border: .3rem solid #000;
+	border-radius: 1rem;
+	padding-right: .2rem;
+	padding-left: .3rem;
+	margin-top: 2rem;	
+}
+
+.gui__counter--on {
+	color: var(--clr-counter-on);
+}
+
+.gui__led {
+	background-color: var(--clr-led-off);
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: .5rem;
+	width: .8rem;
+	height: .8rem;
+	border-radius: .3rem;
+	border: .2rem solid #000;
+}
+
+.gui__led--active {
+	background-color: red;
+}
+
+
+
+/**********************************/
+/* 4. Footer
+/**********************************/
+
+footer {
+	text-align: center;
+	margin-top: 5rem;
+	font-size: 1.25rem;
+}

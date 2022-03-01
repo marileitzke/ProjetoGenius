@@ -6,4 +6,6 @@
 <br>
 
 
-:black_circle: > _Projeto iniciado no bootcamp da Eduzz na plataforma [DIO](https://www.dio.me)._
+:black_circle: > _Projeto iniciado no bootcamp da Eduzz na plataforma [DIO](https://www.dio.me)._ <br>
+
+:black_circle: > _Alterações feitas com referências do projeto GENIUS do dev [Inkasa](https://github.com/inkasadev)._
